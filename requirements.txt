@@ -1,4 +1,5 @@
 langchain
 langchain-groq
-langchain-community 
+langchain-community
 python-dotenv
+simpleeval
