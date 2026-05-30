@@ -7,13 +7,15 @@ from tools import tools
 from config import *
 
 llm = ChatGroq(model=MODEL_NAME, api_key=SecretStr(GROQ_API_KEY))
+llm_mini = ChatGroq(model="llama-3.1-8b-instant", api_key=SecretStr(GROQ_API_KEY))
 
 agent = create_agent(
     model=llm,
     tools=tools,
+    system_prompt="You are Orion, a helpful assistant. When using tools, always follow the exact function call format required.",
     middleware=[
         SummarizationMiddleware(
-            model="llama-3.1-8b-instant",
+            model=llm_mini,
             trigger=MAX_TOKEN_LIMIT,
             keep=("messages", 20)
         )
