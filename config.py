@@ -8,7 +8,7 @@ load_dotenv()
 GROQ_API_KEY = cast(str, os.getenv("GROQ_API_KEY"))
 if not GROQ_API_KEY:
     raise ValueError("GROQ_API_KEY não encontrada no .env")
-MODEL_NAME = "llama-3.3-70b-versatile"
+MODEL_NAME = "openai/gpt-oss-120b"
 TEMPERATURE = 0
 
 # Memory
