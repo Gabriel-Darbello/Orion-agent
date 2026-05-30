@@ -17,7 +17,7 @@ agent = create_agent(
         SummarizationMiddleware(
             model=llm_mini,
             trigger=MAX_TOKEN_LIMIT,
-            keep=("messages", 20)
+            keep=MAX_MESSAGES
         )
     ],
     checkpointer=InMemorySaver(),
